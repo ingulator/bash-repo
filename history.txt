@@ -1,0 +1,182 @@
+inga@inga-virtual-machine:~$ pwd
+/home/inga
+inga@inga-virtual-machine:~$ mkdir gittest
+inga@inga-virtual-machine:~$ cd gittest/
+inga@inga-virtual-machine:~/gittest$ git clone https://github.com/mottybar/myfirstgit.git
+Cloning into 'myfirstgit'...
+remote: Enumerating objects: 31, done.
+remote: Counting objects: 100% (31/31), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 31 (delta 5), reused 19 (delta 3), pack-reused 0
+Receiving objects: 100% (31/31), 10.19 KiB | 802.00 KiB/s, done.
+Resolving deltas: 100% (5/5), done.
+inga@inga-virtual-machine:~/gittest$ ls
+myfirstgit
+inga@inga-virtual-machine:~/gittest$ cd myfirstgit/
+inga@inga-virtual-machine:~/gittest/myfirstgit$ ls
+2.txt  3.txt  daily04  file1.txt  SCP_command
+inga@inga-virtual-machine:~/gittest/myfirstgit$ touch inga
+inga@inga-virtual-machine:~/gittest/myfirstgit$ echo "hello, I am Inga" >> inga 
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git add .
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git commit -m "aded Hello"
+[main 871d7d4] aded Hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 inga
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git remote add https://github.com/mottybar/myfirstgit.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git remote add origin https://github.com/mottybar/myfirstgit.git
+error: remote origin already exists.
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git log
+commit 871d7d4359e546c4c9a0a5eeb185f084b62ded5b (HEAD -> main)
+Author: inga <ingulator@gmail.com>
+Date:   Wed Aug 9 17:32:14 2023 +0300
+
+    aded Hello
+
+commit 28d45d7f80e74e7a3e8ef27d8a36ba1beae9a1af (origin/main, origin/HEAD)
+Author: mottybar <mottybar20@gmail.com>
+Date:   Tue Aug 8 01:01:44 2023 +0300
+
+    SCP_command
+
+commit 3f36c8245dd6f76c3d88878d98824a780c532352
+Author: mottybar <mottybar20@gmail.com>
+Date:   Tue Aug 8 00:58:20 2023 +0300
+
+    Create SCP_command
+
+commit 9195e5cff6b24ab6e5516b326cd4103fe9a0a3f1
+Author: mottybar <mottybar20@gmail.com>
+Date:   Sun Aug 6 22:56:12 2023 +0300
+
+    add history to daily04
+
+commit fd0ee321b0d900e87ef62f3359cbbecd7cfdcbc0
+Author: mottybar <mottybar20@gmail.com>
+Date:   Sun Aug 6 22:52:49 2023 +0300
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+commit 871d7d4359e546c4c9a0a5eeb185f084b62ded5b (HEAD -> main)
+Author: inga <ingulator@gmail.com>
+Date:   Wed Aug 9 17:32:14 2023 +0300
+
+    aded Hello
+
+commit 28d45d7f80e74e7a3e8ef27d8a36ba1beae9a1af (origin/main, origin/HEAD)
+Author: mottybar <mottybar20@gmail.com>
+Date:   Tue Aug 8 01:01:44 2023 +0300
+
+    SCP_command
+
+commit 3f36c8245dd6f76c3d88878d98824a780c532352
+Author: mottybar <mottybar20@gmail.com>
+Date:   Tue Aug 8 00:58:20 2023 +0300
+
+    Create SCP_command
+
+commit 9195e5cff6b24ab6e5516b326cd4103fe9a0a3f1
+Author: mottybar <mottybar20@gmail.com>
+Date:   Sun Aug 6 22:56:12 2023 +0300
+
+    add history to daily04
+
+commit fd0ee321b0d900e87ef62f3359cbbecd7cfdcbc0
+Author: mottybar <mottybar20@gmail.com>
+Date:   Sun Aug 6 22:52:49 2023 +0300
+
+
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git push origin main 
+Username for 'https://github.com': ingulator
+Password for 'https://ingulator@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/mottybar/myfirstgit.git/'
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git push origin main 
+Username for 'https://github.com': ingulator
+Password for 'https://ingulator@github.com': 
+remote: Permission to mottybar/myfirstgit.git denied to ingulator.
+fatal: unable to access 'https://github.com/mottybar/myfirstgit.git/': The requested URL returned error: 403
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git push origin main 
+
+Username for 'https://github.com': Password for 'https://github.com': 
+remote: No anonymous write access.
+fatal: Authentication failed for 'https://github.com/mottybar/myfirstgit.git/'
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git push origin main 
+Username for 'https://github.com': ingulator
+Password for 'https://ingulator@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 137.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/mottybar/myfirstgit.git
+   28d45d7..871d7d4  main -> main
+inga@inga-virtual-machine:~/gittest/myfirstgit$ git  pull origin main
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.26 KiB | 143.00 KiB/s, done.
+From https://github.com/mottybar/myfirstgit
+ * branch            main       -> FETCH_HEAD
+   871d7d4..84ab020  main       -> origin/main
+Updating 871d7d4..84ab020
+Fast-forward
+ inga | 2 ++
+ 1 file changed, 2 insertions(+)
+inga@inga-virtual-machine:~/gittest/myfirstgit$ ls
+2.txt  3.txt  daily04  file1.txt  inga  SCP_command
+inga@inga-virtual-machine:~/gittest/myfirstgit$ cat inga 
+hello, I am Inga
+how are you?
+I'm good
+inga@inga-virtual-machine:~/gittest/myfirstgit$ 
+
+
